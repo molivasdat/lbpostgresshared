@@ -1,0 +1,6 @@
+--liquibase formatted sql
+
+--changeset mikeo:addcontractors
+create table contractors as 
+(select staff_id as contractor_id, first_name, last_name, lower(email) as email from staff);
+--rollback drop table contractors
